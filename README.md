@@ -1,8 +1,6 @@
 
 <h1 align="center" style="font-size:250px">👋 Welcome to My Profile</h1>
 
-- 📚 Hobi coding nodejs tu je start coding from 12
-- 👀 Suka cari bende yang best dan menarik
 
 ### 🛠 &nbsp;Tech Stacks
 
