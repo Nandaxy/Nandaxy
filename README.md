@@ -17,6 +17,5 @@
 ### 🤝🏻 &nbsp;Connect with Me
 
 <p align="center">
-<a href="https://www.instagram.com/nandaaa_79">
-<img alt="Instagram" title="follow me <3" src="https://img.shields.io/badge/-alipje29-E4405F?style=flat&logo=Instagram&logoColor=white"/></a>
+<a href="https://www.instagram.com/nandaaa_79">@nandaaa_79</a>
 
