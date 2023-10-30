@@ -2,9 +2,7 @@
 <h1 align="center" style="font-size:250px">👋 Welcome to My Profile</h1>
 
 
-### 🛠 &nbsp;Tech Stacks
-![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-280137?style=flat&logo=visual-studio-code&logoColor=007ACC)
-
+##
 ### ⚙️ &nbsp;GitHub Analytics
 
 <p align="center" class="d-flex justify-content-center align-items-center">
