@@ -8,15 +8,18 @@
   </head>
   <body>
     <div class="container">
-      <video autoplay muted loop id="bgVideo">
-        <source src="bg_mobile.mp4" type="video/mp4" class="mobile-source" />
-        <source src="bg_desktop.mp4" type="video/mp4" class="desktop-source" />
-        Your browser does not support the video tag.
-      </video>
+      <div id="videoContainer">
+        <video autoplay muted loop id="bgVideo">
+          <source src="src/bg_mobile.mp4" type="video/mp4" class="mobile-source" />
+          <source src="src/bg_desktop.mp4" type="video/mp4" class="desktop-source" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+      </div>
       <div class="overlay"></div>
       <div class="main">
         <div class="containerlogo">
-          <img class="logo" src="logo.jpg" alt="logo" />
+          <img class="logo" src="src/logo.jpg" alt="logo" />
           <h1 class="nama">Zyka</h1>
           <p class="desk">lorem ipsum</p>
         </div>
@@ -131,7 +134,7 @@
             </div>
           </a>
 
-          <a style="text-decoration: none" href="hotspot.7z" download>
+          <a style="text-decoration: none" href="src/hotspot.7z" download>
             <div class="link">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

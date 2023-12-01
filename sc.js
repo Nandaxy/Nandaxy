@@ -4,5 +4,5 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   const bgVideo = document.getElementById("bgVideo");
 
   // Change the source of the video
-  bgVideo.src = "bg_desktop.mp4";
+  bgVideo.src = "src/bg_desktop.mp4";
 }
