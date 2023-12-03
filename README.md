@@ -16,5 +16,5 @@
 
 ### 🤝🏻 &nbsp;Connect with Me
 
-<a href="https://www.instagram.com/nandaaa_79"><img src="https://img.shields.io/badge/-@nandaaa_79-%23E4405F?style=flat-square&logo=instagram&logoColor=white" alt="ig">Instagram</a>
+<a href="https://www.instagram.com/nandaaa_79"><img src="https://img.shields.io/badge/-@nandaaa_79-%23E4405F?style=flat-square&logo=instagram&logoColor=white" alt="ig"/> </a>
 
