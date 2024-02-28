@@ -89,7 +89,12 @@ body {
 
 .container-link {
   padding: 20px;
-  width: 70%;
+  width: 80%;
+}
+
+.container-link2 {
+  width: 80%;
+  padding: 0 20px;
 }
 
 .link {
@@ -120,6 +125,19 @@ body {
 
 .icon-link {
   padding: 2px;
+}
+
+.title-afiliate {
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+}
+
+.product-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (min-width: 768px) {
