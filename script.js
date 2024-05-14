@@ -102,15 +102,18 @@ $(document).ready(function () {
     $("#openModal").click(function () {
       loadModalData(); 
       $("#modal").fadeIn();
+      $("body").addClass("no-scroll");
     });
   
     $(".close").click(function () {
       $("#modal").fadeOut();
+      $("body").removeClass("no-scroll"); 
     });
   
     $(window).click(function (event) {
       if (event.target.id === "modal") {
         $("#modal").fadeOut();
+        $("body").removeClass("no-scroll"); 
       }
     });
   

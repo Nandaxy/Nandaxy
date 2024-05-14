@@ -300,6 +300,10 @@ body {
   opacity: 50%;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* responsive untuk desktop */
 @media screen and (min-width: 768px) {
   .item-link {
