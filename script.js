@@ -15,6 +15,38 @@ $(document).ready(function () {
       downloadLink:
         "https://www.mediafire.com/file/4fidad4p8bj5m81/hotspot.7z/file",
     },
+    {
+      title: "Debloat Aplikasi MIUI",
+      date: "7 mei 2024",
+      viewLink:
+        "/asset/file/debloat.sh.txt",
+      downloadLink:
+        "/asset/file/debloat.sh", 
+    },
+    {
+      title: "Cek_koneksi.php",
+      date: "15 mei 2024",
+      viewLink:
+        "/asset/file/cek_koneksi.php.txt",
+      downloadLink:
+        "/asset/file/cek_koneksi.php", 
+    },
+    {
+      title: "Debian 11 UKK.ova",
+      date: "12 mei 2024",
+      viewLink:
+        "https://www.mediafire.com/file/58ni6qn22rmz3xt/Debian_UKK_24.ova/file",
+      downloadLink:
+        "https://www.mediafire.com/file/58ni6qn22rmz3xt/Debian_UKK_24.ova/file", 
+    },
+    {
+      title: "Debian 11 Fresh Installation.iso",
+      date: "8 mei 2024",
+      viewLink:
+        "https://www.mediafire.com/file/7ree0ubuzswhef4/debian-11-fresh-installation.iso/file",
+      downloadLink:
+        "https://www.mediafire.com/file/7ree0ubuzswhef4/debian-11-fresh-installation.iso/file", 
+    },
   ];
 
   function parseDate(dateStr) {
