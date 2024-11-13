@@ -62,12 +62,12 @@ MYSQL_SCRIPT
     echo "Mengedit konfigurasi SQL pada FreeRADIUS..."
 
     sed -i 's/dialect = "sqlite"/dialect = "mysql"/' /etc/freeradius/mods-enabled/sql
-    sed -i 's/#       driver = "rlm_sql_null"/        driver = "rlm_sql_${dialect}"/' /etc/freeradius/mods-enabled/sql
-    sed -i 's/#       server = "localhost"/        server = "localhost"/' /etc/freeradius/mods-enabled/sql
-    sed -i 's/#       port = 3306/        port = 3306/' /etc/freeradius/mods-enabled/sql
-    sed -i "s/#       login = \"radius\"/        login = \"root\"/" /etc/freeradius/mods-enabled/sql
-    sed -i "s/#       password = \"radpass\"/        password = \"$mysql_password\"/" /etc/freeradius/mods-enabled/sql
-    sed -i 's/#       read_clients = yes/       read_clients = yes/' /etc/freeradius/mods-enabled/sql
+    sed -i 's/# *driver = "rlm_sql_null"/        driver = "rlm_sql_${dialect}"/' /etc/freeradius/mods-enabled/sql
+    sed -i 's/# *server = "localhost"/        server = "localhost"/' /etc/freeradius/mods-enabled/sql
+    sed -i 's/# *port = 3306/        port = 3306/' /etc/freeradius/mods-enabled/sql
+    sed -i "s/# *login = \"radius\"/        login = \"root\"/" /etc/freeradius/mods-enabled/sql
+    sed -i "s/# *password = \"radpass\"/        password = \"$mysql_password\"/" /etc/freeradius/mods-enabled/sql
+    sed -i 's/# *read_clients = yes/       read_clients = yes/' /etc/freeradius/mods-enabled/sql
 
     echo "Menonaktifkan konfigurasi TLS..."
 
