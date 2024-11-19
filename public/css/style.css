@@ -370,18 +370,18 @@ body {
 }
 
 .spotify-content {
-    background-color: #161616;
+    background-color: #181818;
     display: flex;
     align-items: center;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 2px rgba(255, 255, 255, 0.1);
     padding-right: 10px;
     transition: all 0.3s ease-in-out;
 }
 
 .spotify-content:hover {
     background-color: #222222;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 4px rgba(255, 255, 255, 0.1);
 }
 .album-image {
     margin-right: 10px;
@@ -403,6 +403,7 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
     padding: 3px 0px;
+    width: 100%;
 }
 .music-info h4 {
     font-size: 12px;
@@ -426,6 +427,23 @@ body {
 
 .title-of-link:hover {
     opacity: 90%;
+}
+
+.music-artist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.music-artist p {
+    margin-right: 5bpx;
+}
+
+.wm-spotify {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 8px;
 }
 
 /* responsive untuk desktop */

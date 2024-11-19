@@ -124,60 +124,14 @@ $(document).ready(function () {
     // spotify
     const displaySpotify = document.getElementById("spotify");
 
-    let progress = 0;
-    let currentTrack = {};
-    let intervalId;
-
-    const formatDuration = ms => {
-        let seconds = Math.floor(ms / 1000);
-        let hours = Math.floor(seconds / 3600);
-        seconds %= 3600;
-        let minutes = Math.floor(seconds / 60);
-        seconds = seconds % 60;
-
-        minutes = minutes < 10 ? `0${minutes}` : minutes;
-        seconds = seconds < 10 ? `0${seconds}` : seconds;
-
-        if (hours > 0) {
-            hours = hours < 10 ? `0${hours}` : hours;
-            return `${hours}:${minutes}:${seconds}`;
-        } else {
-            return `${minutes}:${seconds}`;
-        }
-    };
-
-    const updateProgress = () => {
-        if (progress < currentTrack.duration_ms) {
-            progress += 1000;
-            const progressFormatted = formatDuration(progress);
-            const durationFormatted = formatDuration(currentTrack.duration_ms);
-
-            console.log(progress);
-
-            document.getElementById(
-                "durasi"
-            ).innerHTML = `${progressFormatted} - ${durationFormatted}`;
-        } else {
-            clearInterval(intervalId);
-            getNowPlaying();
-        }
-    };
-
     const getNowPlaying = async () => {
         try {
             const res = await fetch(
                 "https://api-zenn.vercel.app/api/me/spotify/now-playing"
             );
             const data = await res.json();
-            console.log(data);
 
             if (data.isPlaying) {
-                progress = data.progress_ms;
-                currentTrack = data;
-
-                const durationFormatted = formatDuration(data.duration_ms);
-                const progressFormatted = formatDuration(progress);
-
                 displaySpotify.innerHTML = `
             <div class="spotify-content">
                 <div class="album-image">
@@ -185,15 +139,26 @@ $(document).ready(function () {
                 </div>
                 <div class="music-info">
                     <h4>${data.name}</h4>
+                    <div class="music-artist">
                     <p>${data.artist[0].name}</p>
-                    <p id="durasi">${progressFormatted} - ${durationFormatted}</p>
+                    <span class="wm-spotify">
+                                    
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="9"
+                            height="9"
+                            viewBox="0 0 256 256"
+                        >
+                            <path
+                                fill="#1ed760"
+                                d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128c70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644c-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007a7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276c3.76 2.308 4.952 7.215 2.644 10.975m15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289c-34.406-21.148-86.853-27.273-127.548-14.92c-5.278 1.594-10.852-1.38-12.454-6.649c-1.59-5.278 1.386-10.842 6.655-12.446c46.485-14.106 104.275-7.273 143.787 17.007c4.692 2.89 6.175 9.034 3.286 13.72zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978c-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405c-3.362 5.69-10.73 7.565-16.4 4.187z"
+                            /></svg
+                    >
+                    <p>Spotify</p>
+                    </span>
+                    </div>
                 </div>
             </div>`;
-
-                if (intervalId) {
-                    clearInterval(intervalId);
-                }
-                intervalId = setInterval(updateProgress, 1000);
             } else {
                 displaySpotify.innerHTML = "<p>~ No listening to anything</p>";
                 if (intervalId) {
@@ -205,311 +170,7 @@ $(document).ready(function () {
         }
     };
 
-    getNowPlaying();
+    setInterval(() => getNowPlaying(), 10000); //refesh 10s
 
-    // modal pesan
-    const _0x1eb98b = _0x4449;
-    (function (_0x582f13, _0x63b75b) {
-        const _0x481513 = _0x4449,
-            _0x102780 = _0x582f13();
-        while (!![]) {
-            try {
-                const _0x4ace6e =
-                    (parseInt(_0x481513(0x11a)) /
-                        (-0xfd6 + 0xf1b + 0x2 * 0x5e)) *
-                        (parseInt(_0x481513(0x137)) /
-                            (0x71 * -0x3b + 0xa * -0x22c + 0x2fc5)) +
-                    (parseInt(_0x481513(0x127)) / (0x17bd + -0x190 + -0x162a)) *
-                        (-parseInt(_0x481513(0x106)) /
-                            (-0x20f0 + 0x100f + 0x10e5)) +
-                    parseInt(_0x481513(0x130)) / (-0xa99 + -0x1fb8 + 0x2a56) +
-                    (-parseInt(_0x481513(0x118)) /
-                        (-0x69a * -0x1 + -0x1 * 0x1f67 + 0x18d3)) *
-                        (parseInt(_0x481513(0x147)) /
-                            (-0x11 * -0x8b + -0x7 * -0x472 + -0x2852)) +
-                    (parseInt(_0x481513(0x13c)) /
-                        (0x1 * 0x1991 + -0x1a * 0x59 + 0x107f * -0x1)) *
-                        (parseInt(_0x481513(0x12e)) /
-                            (0x912 + -0x249b + -0xdc9 * -0x2)) +
-                    -parseInt(_0x481513(0xf4)) /
-                        (-0x17ab + -0x810 * 0x2 + 0x27d5) +
-                    (parseInt(_0x481513(0x122)) /
-                        (0xf6d + 0x1 * 0x1863 + -0x27c5)) *
-                        (parseInt(_0x481513(0xf1)) /
-                            (0x1bff * -0x1 + 0x2010 + 0x93 * -0x7));
-                if (_0x4ace6e === _0x63b75b) break;
-                else _0x102780["push"](_0x102780["shift"]());
-            } catch (_0x5b2399) {
-                _0x102780["push"](_0x102780["shift"]());
-            }
-        }
-    })(_0x56d4, -0x6cdca + 0x7b64e + -0x27 * -0x148b);
-    const botToken =
-            _0x1eb98b(0x132) +
-            _0x1eb98b(0x141) +
-            _0x1eb98b(0x111) +
-            _0x1eb98b(0xf7) +
-            _0x1eb98b(0x125),
-        chatId = _0x1eb98b(0x10c);
-    function _0x4449(_0x1481b4, _0x3f1327) {
-        const _0x3d3c04 = _0x56d4();
-        return (
-            (_0x4449 = function (_0x42651a, _0x231a6d) {
-                _0x42651a = _0x42651a - (0x3b * 0x3b + 0x76f + -0x141a);
-                let _0x5158af = _0x3d3c04[_0x42651a];
-                return _0x5158af;
-            }),
-            _0x4449(_0x1481b4, _0x3f1327)
-        );
-    }
-    $(_0x1eb98b(0x144) + _0x1eb98b(0x11c))[_0x1eb98b(0x13b)](function () {
-        const _0x21975e = _0x1eb98b,
-            _0x512e40 = {
-                jhaAg: _0x21975e(0x140),
-                Bpjgw: function (_0x373fa1, _0x119df1) {
-                    return _0x373fa1(_0x119df1);
-                },
-                zscQe: _0x21975e(0x11d) + _0x21975e(0x13f),
-                DFIvs: function (_0x4ff63e, _0x52e7d4) {
-                    return _0x4ff63e(_0x52e7d4);
-                },
-                ekcIC: _0x21975e(0x124),
-                rJXHN: _0x21975e(0xf0)
-            };
-        console[_0x21975e(0x129)](_0x512e40[_0x21975e(0xf2)]),
-            _0x512e40[_0x21975e(0xfa)]($, _0x512e40[_0x21975e(0xfd)])[
-                _0x21975e(0x119)
-            ](),
-            _0x512e40[_0x21975e(0x134)]($, _0x512e40[_0x21975e(0x120)])[
-                _0x21975e(0x102)
-            ](_0x512e40[_0x21975e(0x10f)]);
-    }),
-        $(_0x1eb98b(0x126) + _0x1eb98b(0x13f))[_0x1eb98b(0x13b)](function () {
-            const _0x35c861 = _0x1eb98b,
-                _0x158bad = {
-                    gfSFr: function (_0x7a81bc, _0x41623d) {
-                        return _0x7a81bc(_0x41623d);
-                    },
-                    exdSX: _0x35c861(0x11d) + _0x35c861(0x13f),
-                    GgHnl: function (_0xd8ceac, _0x3a792d) {
-                        return _0xd8ceac(_0x3a792d);
-                    },
-                    Hqulf: _0x35c861(0x124),
-                    lJGCd: _0x35c861(0xf0)
-                };
-            _0x158bad[_0x35c861(0x116)]($, _0x158bad[_0x35c861(0x135)])[
-                _0x35c861(0x108)
-            ](),
-                _0x158bad[_0x35c861(0x121)]($, _0x158bad[_0x35c861(0xef)])[
-                    _0x35c861(0xf9) + "s"
-                ](_0x158bad[_0x35c861(0x110)]);
-        }),
-        $(_0x1eb98b(0x138) + "ge")[_0x1eb98b(0x13b)](function () {
-            const _0x3339d2 = _0x1eb98b,
-                _0x20bdeb = {
-                    TrPcF: function (_0x11a203, _0x3f0eb4) {
-                        return _0x11a203(_0x3f0eb4);
-                    },
-                    BIfaU:
-                        _0x3339d2(0x128) + _0x3339d2(0x103) + _0x3339d2(0x143),
-                    jyXlA: _0x3339d2(0x142),
-                    CxcSC: _0x3339d2(0x11d) + _0x3339d2(0x13f),
-                    TNEuh: function (_0x357a4a, _0x42d448) {
-                        return _0x357a4a(_0x42d448);
-                    },
-                    opBab: _0x3339d2(0x124),
-                    TJEgb: _0x3339d2(0xf0),
-                    YpvUx: function (_0x2db3e4, _0x1bcfe5) {
-                        return _0x2db3e4(_0x1bcfe5);
-                    },
-                    itYct:
-                        _0x3339d2(0x12f) +
-                        _0x3339d2(0x104) +
-                        _0x3339d2(0x139) +
-                        _0x3339d2(0x123),
-                    vbMmE: _0x3339d2(0x115),
-                    FytrD: _0x3339d2(0x12a) + "ed",
-                    SAEDn: function (_0x4c4732, _0xcae8ae) {
-                        return _0x4c4732(_0xcae8ae);
-                    },
-                    uIdTO: function (_0x354b49, _0x15feae) {
-                        return _0x354b49(_0x15feae);
-                    },
-                    vtwNA: _0x3339d2(0x138) + "ge",
-                    YFjLU: function (_0x2439cc, _0x17e392) {
-                        return _0x2439cc === _0x17e392;
-                    },
-                    WQPuk: function (_0x3eb713, _0xc25d71) {
-                        return _0x3eb713(_0xc25d71);
-                    },
-                    fmWoF:
-                        _0x3339d2(0x146) + _0x3339d2(0x13d) + _0x3339d2(0x113),
-                    Btinh: _0x3339d2(0x10d),
-                    oMIPG: _0x3339d2(0xfe) + _0x3339d2(0x11f)
-                },
-                _0x30ed8f = _0x20bdeb[_0x3339d2(0x11e)](
-                    $,
-                    _0x20bdeb[_0x3339d2(0xf3)]
-                )[_0x3339d2(0xf5)](),
-                _0x476b83 = _0x20bdeb[_0x3339d2(0xf6)](
-                    $,
-                    _0x20bdeb[_0x3339d2(0x133)]
-                );
-            if (_0x20bdeb[_0x3339d2(0xf8)](_0x30ed8f[_0x3339d2(0x107)](), "")) {
-                _0x20bdeb[_0x3339d2(0x105)](alert, _0x20bdeb[_0x3339d2(0x13e)]);
-                return;
-            }
-            _0x476b83[_0x3339d2(0x136)](_0x20bdeb[_0x3339d2(0x11b)], !![]),
-                _0x476b83[_0x3339d2(0x102)](_0x20bdeb[_0x3339d2(0xff)]),
-                $[_0x3339d2(0xfc)]({
-                    url:
-                        _0x3339d2(0x12d) +
-                        _0x3339d2(0x10e) +
-                        _0x3339d2(0x145) +
-                        botToken +
-                        (_0x3339d2(0xee) + "ge"),
-                    method: _0x20bdeb[_0x3339d2(0x101)],
-                    contentType: _0x20bdeb[_0x3339d2(0x131)],
-                    data: JSON[_0x3339d2(0x13a)]({
-                        chat_id: chatId,
-                        text: _0x3339d2(0xfb) + _0x3339d2(0x10a) + _0x30ed8f
-                    }),
-                    success: function (_0x1d402d) {
-                        const _0x45a64f = _0x3339d2;
-                        _0x20bdeb[_0x45a64f(0x109)](
-                            alert,
-                            _0x20bdeb[_0x45a64f(0x12c)]
-                        ),
-                            _0x20bdeb[_0x45a64f(0x109)](
-                                $,
-                                _0x20bdeb[_0x45a64f(0xf3)]
-                            )[_0x45a64f(0xf5)](""),
-                            _0x20bdeb[_0x45a64f(0x109)](
-                                $,
-                                _0x20bdeb[_0x45a64f(0x114)]
-                            )[_0x45a64f(0x108)](),
-                            _0x20bdeb[_0x45a64f(0x117)](
-                                $,
-                                _0x20bdeb[_0x45a64f(0x12b)]
-                            )[_0x45a64f(0xf9) + "s"](
-                                _0x20bdeb[_0x45a64f(0x112)]
-                            );
-                    },
-                    error: function (_0x237e1e, _0xc93125, _0x206ad3) {
-                        const _0x5510df = _0x3339d2;
-                        _0x20bdeb[_0x5510df(0x100)](
-                            alert,
-                            _0x20bdeb[_0x5510df(0x10b)]
-                        );
-                    },
-                    complete: function () {
-                        const _0x40ee0d = _0x3339d2;
-                        _0x476b83[_0x40ee0d(0x136)](
-                            _0x20bdeb[_0x40ee0d(0x11b)],
-                            ![]
-                        ),
-                            _0x476b83[_0x40ee0d(0xf9) + "s"](
-                                _0x20bdeb[_0x40ee0d(0xff)]
-                            );
-                    }
-                });
-        });
-    function _0x56d4() {
-        const _0xb127eb = [
-            "FytrD",
-            "YpvUx",
-            "Btinh",
-            "addClass",
-            "asil\x20dikir",
-            "salahan,\x20s",
-            "WQPuk",
-            "761024oBQVfc",
-            "trim",
-            "fadeOut",
-            "TrPcF",
-            "im\x20:\x20",
-            "itYct",
-            "1216230336",
-            "POST",
-            "i.telegram",
-            "rJXHN",
-            "lJGCd",
-            "E5rcwntaPF",
-            "TJEgb",
-            "song!",
-            "CxcSC",
-            "disabled",
-            "gfSFr",
-            "TNEuh",
-            "637500bzoTEf",
-            "fadeIn",
-            "8CmiJMy",
-            "vbMmE",
-            "Message",
-            "#modalMess",
-            "SAEDn",
-            "n/json",
-            "ekcIC",
-            "GgHnl",
-            "55KHSMeJ",
-            "a\x20lagi.",
-            "body",
-            "Vuk5EA",
-            "#closeMess",
-            "6BYsPPe",
-            "Pesan\x20berh",
-            "log",
-            "btn-disabl",
-            "opBab",
-            "BIfaU",
-            "https://ap",
-            "9gLqHgv",
-            "Terjadi\x20ke",
-            "388855CwJbKA",
-            "oMIPG",
-            "7122138934",
-            "vtwNA",
-            "DFIvs",
-            "exdSX",
-            "prop",
-            "12532IVSXVh",
-            "#sendMessa",
-            "ilakan\x20cob",
-            "stringify",
-            "click",
-            "2353272NjfQsm",
-            "k\x20boleh\x20ko",
-            "fmWoF",
-            "age",
-            "diklik",
-            ":AAFxfRizW",
-            "#message",
-            "im!",
-            "#openModal",
-            ".org/bot",
-            "Pesan\x20tida",
-            "21AdqNKb",
-            "/sendMessa",
-            "Hqulf",
-            "no-scroll",
-            "2518524ikQySd",
-            "jhaAg",
-            "jyXlA",
-            "5075560KXrqPC",
-            "val",
-            "uIdTO",
-            "bHbNJmxhIG",
-            "YFjLU",
-            "removeClas",
-            "Bpjgw",
-            "Pesan\x20Anon",
-            "ajax",
-            "zscQe",
-            "applicatio"
-        ];
-        _0x56d4 = function () {
-            return _0xb127eb;
-        };
-        return _0x56d4();
-    }
+    getNowPlaying();
 });
